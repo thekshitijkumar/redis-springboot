@@ -10,7 +10,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @ToString
 @Builder
-public class User  {
+public class User  implements Serializable{
     private int id;
     private String name;
     private String country;

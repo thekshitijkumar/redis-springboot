@@ -15,7 +15,14 @@ public class Config {
     @Bean
     LettuceConnectionFactory getfactory()
     {
-        LettuceConnectionFactory connectionFactory=new LettuceConnectionFactory(new RedisStandaloneConfiguration("localhost",6379));
+//        LettuceConnectionFactory connectionFactory=new LettuceConnectionFactory
+//                (new RedisStandaloneConfiguration("localhost",6379));
+        RedisStandaloneConfiguration redisStandaloneConfiguration=new RedisStandaloneConfiguration("redis-11491.c84.us-east-1-2.ec2.cloud.redislabs.com",11491);
+        redisStandaloneConfiguration.setPassword("2IQV76YTemPEOjitABVxTiRgLm6DHKNV");
+
+
+        LettuceConnectionFactory connectionFactory =new LettuceConnectionFactory(redisStandaloneConfiguration);
+
         return connectionFactory;
 
     }
